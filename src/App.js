@@ -41,7 +41,7 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/ShoppingBasket" element={<ShoppingBasket booksData={booksData} setBooksData={setBooksData}/>} />
             <Route path="/ShoppingList" element={<ShoppingList booksData={booksData} />} />
-            <Route path="/detail/:id" element={<Detail booksData={booksData} />} />
+            <Route path="/detail/:proNum" element={<Detail booksData={booksData} />} />
             <Route path="/register" element={<Register booksData={booksData} setBooksData={setBooksData} />} />
             
         </Routes>

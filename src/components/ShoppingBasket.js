@@ -1,7 +1,6 @@
 import React from 'react';
 import './ShoppingBasket.scss';
 import { Table } from 'react-bootstrap';
-import AddButton from './addButton/AddButton';
 
 function ShoppingBasket(props) {
   const [products,setProducts] = React.useState([]);
@@ -10,7 +9,7 @@ function ShoppingBasket(props) {
   React.useEffect(()=>{
     let books = [];
     let total = 0;
-    books = props.booksData.map(book=>{
+    books = props.booksData.list.map(book=>{
       total+=book.proPrice;
       return {count:1,price:book.proPrice};
     });
@@ -21,7 +20,7 @@ function ShoppingBasket(props) {
 
   const addCount = (index)=>{
     let count = products[index].count+1;
-    let price = props.booksData[index].proPrice*count;
+    let price = props.booksData.list[index].proPrice*count;
     let tempProducts = [...products];
     tempProducts[index]={count:count,price:price};
 
@@ -34,7 +33,7 @@ function ShoppingBasket(props) {
   const subCount = (index)=>{
     if (products[index].count > 1) {
       let count = products[index].count-1;
-      let price = props.booksData[index].proPrice*count;
+      let price = props.booksData.list[index].proPrice*count;
       let tempProducts = [...products];
       tempProducts[index]={count:count, price:price};
   
@@ -64,13 +63,12 @@ function ShoppingBasket(props) {
         </thead>
         <tbody>
           {
-            props.booksData.map((a,i)=>{
+            props.booksData.list.map((a,i)=>{
               return (
                 <tr key={i}>
                   <td>{ a.id }</td>
                   <td><img id="ShoppingBasket-image" src={ a.proImage } /></td>
-                  <td id="ShoppingBasket-title">{ a.
-                  proTitle }</td>
+                  <td id="ShoppingBasket-title">{ a.proTitle }</td>
                   <td>{ products[i]&&products[i].count }</td>
                   <td className="ShoppingBasket-button">
                     <button className="ShoppinBasket-btn-item" onClick={()=>{addCount(i)}}>+</button>

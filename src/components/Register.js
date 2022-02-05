@@ -39,7 +39,7 @@ function Register(props) {
     if (validateForm()) {
       props.setBooksData(
         [
-          ...props.booksData,
+          ...props.booksData.list,
           {
             // id는??? DB에서 받아오는거아님? 이거 내가 추가 어케함? id:Date.now(), 이런짓도 하면안되는건데 어케해야하지
             proTitle: proTitle,

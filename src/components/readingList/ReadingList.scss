@@ -1,12 +1,9 @@
 .ReadingList {
   width: 1000px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
   .ReadingList-top {
-    margin: {
-      left: 10px;
-      bottom: 10px;
-    }
     #ReadingList-image {
       height: 200px;
       width: 180px;

@@ -9,7 +9,7 @@ function ReadingList(props) {
           
           return (
             <span key={i} className="ReadingList-top">
-              <div><img id="ReadingList-image" src={ a.proImage}/></div>
+              <div><img id="ReadingList-image" src={ a.proImage }/></div>
             </span>
           )
         })

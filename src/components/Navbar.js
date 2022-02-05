@@ -15,7 +15,7 @@ function Navbar() {
       <section className="section-display">
         <Link to="/mainpage" id="books-font">SH Books</Link>
         <sapn className="section-display border-all">
-          <details open>
+          <details>
           {/* 디폴트 값 */}
             <summary id="toggle">
               통합검색 <span id="v-size">∨</span><sapn id="l-color">ㅣ</sapn>

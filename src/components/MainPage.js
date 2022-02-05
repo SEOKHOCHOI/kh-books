@@ -14,9 +14,11 @@ function MainPage(props) {
       <div className="MainPage-advertisement">
         <Ad adData={adData} />
       </div>
+      <h5>베스트도서</h5>
       <div className="MainPage-bestBox">
-        <BestBooks booksData={props.booksData}/>  
+        <BestBooks booksData={props.booksData.list}/>  
       </div>
+      <h5>MD 추천도서</h5>
       <div className="MainPage-recommended">
         <ReadingList rdData={rdData}/>
       </div>

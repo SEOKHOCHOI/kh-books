@@ -22,13 +22,13 @@ function ShoppingList(props) {
           </thead>
           <tbody>
             {
-              props.booksData.map((a,i)=>{
+              props.booksData.list.map((a,i)=>{
                 return (
                   <tr key={i}>
                     <td>{ a.id }</td>
                     <td id="ShoppingList-image"><img src={ a.proImage } /></td>
                     <td id="ShoppingList-title">{ a.proTitle }</td>
-                    <td>{ a.proNum }</td>
+                    <td>{ a.orderAmount }</td>
                     <tr className="ShoppingList-info-price">
                       <td>{ a.proPrice }</td>
                       <td>할인가</td>
