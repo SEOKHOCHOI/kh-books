@@ -1,0 +1,127 @@
+$table-color: gainsboro;
+$font-main: whitesmoke;
+$main-color: rgb(40, 38, 138);
+$mypage-color: rgb(122, 122, 122);
+$tr-color: rgb(122, 118, 118);
+$table-info-color: rgb(90, 87, 87);
+$button-color: green;
+
+$font-size: 12px;
+
+.MyPage {
+  letter-spacing: 1px;
+  display: flex;
+  min-width: 1000px;
+  .mypage-box-top {
+    margin: 20px 18px 0 80px;
+    .mypage-box {
+      min-width: 114px;
+      border: 1px solid $main-color;
+      th {
+        color: $font-main;
+        background-color: $main-color;
+        font-size: $font-size;
+        padding: 4px 23px;
+      }
+      td {
+        font-weight: 550;
+        font-size: 8px;
+        color: $table-info-color;
+      }
+      .padding-td01 {
+        padding-top: 10px;
+        padding-bottom: 6px;
+      }
+      .padding-td02 {
+        padding-bottom: 10px;
+      }
+    }
+  }
+  .table-all {
+    padding-top: 20px;
+    min-width: 700px;
+    .table-top {
+      display: flex;
+      justify-content: space-between;
+      .mypage {
+        color: $mypage-color;
+        display: inline-block;
+        font-weight: bolder;
+        margin-left: 16px;
+        font-size: $font-size;
+      }
+      .home {
+        color: $mypage-color;
+        display: inline-block;
+        font-size: 10px;
+        margin-right: 18px;
+      }
+    }
+    .boundary-line {
+      border-bottom: 2px solid $mypage-color;
+      padding-top: 4px;
+    }
+    .my-info {
+      border: 1px solid $table-color;
+      margin: auto;
+      th {
+        background-color: rgb(248, 248, 248);
+        color: $tr-color;
+        padding: 8px 40px;
+        font-size: 5px;
+      }
+      td {
+        padding: 0 90px;
+        font-size: 11px;
+      }
+    }
+    .my-info-font-top {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0 0 16px;
+      .my-info-font {
+        display: inline-block;
+        font-weight: bolder;
+        color: $table-info-color;
+        font-size: $font-size;
+      }
+      .info-modify {
+        background-color: whitesmoke;
+        border-color: $button-color;
+        color: $button-color;
+        font-size: 10px;
+        width: 62px;
+        height: 22px;
+        margin-bottom: 8px;
+        margin-right: 19px;
+      }
+    }
+    .track-info {
+      text-align: left;
+      margin: 35px 0 5px 16px;
+      font-weight: bolder;
+      font-size: $font-size;
+      color: $table-info-color;
+    }
+    .track-top {
+      border: 1px solid $table-color;
+      margin: auto;
+      min-width: 667px;
+      .track-th {
+        border: 1px solid $table-color;
+        background-color: rgb(248, 248, 248);
+        color: $tr-color;
+        font-size: 5px;
+        padding: 8px 0;
+      }
+      .track-td {
+        border: 1px solid $table-color;
+        padding: 4px 0;
+      }
+      .track-td-name {
+        border: 1px solid $table-color;
+        padding: 4px 30px;
+      }
+    }
+  }
+}

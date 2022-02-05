@@ -1,0 +1,80 @@
+$font-color: rgb(121, 115, 115);
+$main-color: rgb(40, 38, 138);
+.QnA {
+  min-width: 1000px;
+  h5 {
+    font-weight: bolder;
+    margin: {
+      top: 30px;
+      left: 122px;
+    }
+    text-align: left;
+    color: $font-color;
+  }
+
+  .QnA-h5-bottom {
+    border-bottom: 1.6px solid $font-color;
+    width: 800px;
+    margin: {
+      top: 10px;
+      bottom: 80px;
+      left: 100px;
+    }
+  }
+
+  #QnA-font {
+    color: $font-color;
+    text-align: left;
+    margin-left: 188px;
+  }
+
+  .QnA-h6-bottom {
+    border-bottom: 1.6px solid $font-color;
+    width: 700px;
+    margin: {
+      left: 150px;
+      top: 10px;
+    }
+  }
+
+  .QnA-contents-display {
+    display: flex;
+    margin: {
+      top: 30px;
+      left: 187px;
+    }
+    color: $font-color;
+    p {
+      font: {
+        size: 13px;
+        weight: bolder;
+      }
+      letter-spacing: 3px;
+      margin-right: 7px;
+    }
+    input {
+      border: 1.6px solid $font-color;
+    }
+    textarea {
+      border: 1.6px solid $font-color;
+    }
+  }
+  #QnA-register {
+    background-color: $main-color;
+    border: none;
+    color: whitesmoke;
+    display: flex;
+    font-size: 14px;
+    letter-spacing: 3px;
+    padding-left: 13px;
+    width: 65px;
+    height: 30px;
+    margin: {
+      top: 30px;
+      left: 231px;
+    }
+    &:hover {
+      outline: 1px solid $main-color;
+    }
+  }
+}

@@ -1,0 +1,167 @@
+$font-color: rgb(121, 115, 115);
+$font-title: rgb(85, 78, 78);
+$main-color: rgb(40, 38, 138);
+$border-color: rgb(189, 181, 181);
+$border-lighter-color: rgb(216, 209, 209);
+
+.ShoppingList {
+  min-width: 1000px;
+  .ShoppingList-tables {
+    margin: {
+      left: 160px;
+      top: 10px;
+      bottom: 10px;
+    }
+    #ShoppingList-image {
+      width: 190px;
+      img {
+        width: 120px;
+      }
+    }
+    #ShoppingList-title {
+      width: 180px;
+    }
+    .ShoppingList-info-all {
+      display: flex;
+      justify-content: space-evenly;
+    }
+    .ShoppingList-info-price {
+      display: flex;
+      flex-direction: column;
+      #ShoppingList-price-all {
+        width: 140px;
+        margin: {
+          bottom: 42px;
+        }
+      }
+    }
+  }
+  h5 {
+    display: flex;
+    font-weight: bolder;
+    color: $font-color;
+    margin: {
+      top: 60px;
+      bottom: 10px;
+      left: 160px;
+    }
+  }
+  h6 {
+    font-weight: bolder;
+    color: $font-title;
+  }
+  div {
+    display: flex;
+  }
+  .ShoppingList-bottom {
+    border-bottom: 2px solid $border-color;
+    width: 680px;
+    margin-left: 160px;
+  }
+  .ShoppingList-bottom-lighter {
+    border-bottom: 1px solid $border-lighter-color;
+    width: 680px;
+    margin-left: 160px;
+  }
+  .ShoppingList-input-info {
+    margin: {
+      top: 12px;
+      bottom: 12px;
+      left: 174px;
+    }
+    .ShoppingList-phone {
+      display: flex;
+      flex-direction: row;
+    }
+    .ShoppingList-home-num {
+      margin: {
+        top: 4px;
+        right: 64px;
+      }
+    }
+    .ShoppingList-phone-num {
+      margin: {
+        top: 4px;
+        right: 48px;
+        left: 20px;
+      }
+    }
+    .ShoppingList-name {
+      margin-right: 96px;
+    }
+    #ShoppingList-l {
+      margin-left: 20px;
+    }
+    #ShoppingList-price {
+      margin: {
+        right: 10px;
+        bottom: 10px;
+        left: 40px;
+      }
+      font: {
+        weight: bolder;
+        size: 14px;
+      }
+      color: red;
+    }
+  }
+  .ShoppingList-title {
+    margin: {
+      top: 5px;
+      right: 80px;
+    }
+  }
+  .ShoppingList-bottom-last {
+    border-bottom: 2px solid $border-color;
+    width: 680px;
+    margin: {
+      left: 160px;
+      top: 20px;
+    }
+  }
+  .ShoppingList-button {
+    display: flex;
+    justify-content: center;
+    margin: {
+      top: 16px;
+      bottom: 60px;
+    }
+    #ShoppingList-order {
+      background-color: $main-color;
+      border: none;
+      color: whitesmoke;
+      display: flex;
+      font-size: 13px;
+      letter-spacing: 3px;
+      padding-left: 13px;
+      width: 92px;
+      height: 30px;
+      margin: {
+        left: 20px;
+        right: -16px;
+      }
+      &:hover {
+        outline: 1px solid $main-color;
+      }
+    }
+    #ShoppingList-cancel {
+      outline: 1px solid $main-color;
+      background-color: whitesmoke;
+      border: none;
+      color: $main-color;
+      display: flex;
+      font-size: 13px;
+      letter-spacing: 3px;
+      padding-left: 13px;
+      width: 91px;
+      height: 29px;
+      margin: {
+        left: 20px;
+        top: 0.9px;
+      }
+      &:hover {
+        outline: 2px solid $main-color;
+      }
+    }
+  }
+}

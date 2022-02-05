@@ -1,0 +1,72 @@
+$font-color: rgb(121, 115, 115);
+$main-color: rgb(40, 38, 138);
+
+@mixin Signup-bottom($border: none) {
+  border-bottom: $border;
+  width: 700px;
+  margin: {
+    left: 150px;
+    top: 10px;
+    bottom: 30px;
+  }
+}
+.Signup {
+  min-width: 1000px;
+  .Signup-bottom-lighter {
+    @include Signup-bottom(1px solid rgb(185, 181, 181));
+  }
+  .Signup-h6-bottom {
+    @include Signup-bottom(1.6px solid $font-color);
+  }
+  #Signup-font {
+    color: $font-color;
+    text-align: left;
+    margin-left: 188px;
+    font-weight: bolder;
+  }
+
+  .Signup-contents-top {
+    display: flex;
+    margin: {
+      left: 187px;
+      bottom: 25px;
+    }
+    .Signup-flex {
+      display: flex;
+      #Signup-num {
+        margin-left: -24px;
+        letter-spacing: 1px;
+      }
+      p {
+        font: {
+          size: 13px;
+          weight: bolder;
+        }
+        letter-spacing: 3px;
+      }
+      input {
+        border: 1.6px solid $font-color;
+        height: 34px;
+      }
+    }
+  }
+
+  #Signup-register {
+    background-color: $main-color;
+    border: none;
+    color: whitesmoke;
+    display: flex;
+    font-size: 14px;
+    letter-spacing: 3px;
+    padding-left: 13px;
+    width: 65px;
+    height: 30px;
+    margin: {
+      top: 30px;
+      left: 712px;
+    }
+    &:hover {
+      outline: 1px solid $main-color;
+    }
+  }
+}

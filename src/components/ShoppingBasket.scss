@@ -1,0 +1,117 @@
+$font-color: rgb(121, 115, 115);
+$font-books: rgb(85, 78, 78);
+$main-color: rgb(40, 38, 138);
+
+.ShoppingBasket {
+  min-width: 1000px;
+  .ShoppingBasket-basket {
+    display: flex;
+    color: $font-books;
+    font-weight: bolder;
+    margin-left: 120px;
+  }
+  .ShoppingBasket-h5-bottom {
+    border-bottom: 2px solid $font-color;
+    width: 900px;
+    margin: {
+      left: auto;
+      bottom: 30px;
+      right: auto;
+    }
+  }
+  .d {
+    width: 800px;
+    margin: {
+      left: auto;
+      right: auto;
+    }
+  }
+  #ShoppingBasket-image {
+    width: 110px;
+  }
+  .ShoppingBasket-h6-bottom {
+    border-bottom: 2px solid $font-color;
+    width: 800px;
+    margin: 0 auto 0 auto;
+  }
+  .ShoppingBasket-contents-display {
+    display: flex;
+    margin: 35px auto 35px auto;
+    .ShoppingBasket-books {
+      font-weight: bolder;
+      color: $font-books;
+      margin-right: 85px;
+    }
+    .ShoppingBasket-num {
+      margin-right: 220px;
+    }
+  }
+  .ShoppingBasket-main-font {
+    font-weight: bolder;
+    color: $font-books;
+    margin: 0 40px 0 220px;
+  }
+  .ShoppingBasket-button {
+    display: flex;
+    flex-direction: column;
+    .ShoppinBasket-btn-item- {
+      width: 27px;
+      margin: {
+        bottom: 52px;
+        left: auto;
+        right: auto;
+      }
+      &:hover {
+        background-color: grey;
+      }
+    }
+    .ShoppinBasket-btn-item {
+      margin: {
+        left: auto;
+        right: auto;
+      }
+      &:hover {
+        background-color: grey;
+      }
+    }
+  }
+  .ShoppingBasket-all-bottom {
+    margin: {
+      top: 35px;
+      bottom: 60px;
+    }
+    display: flex;
+    .ShoppingBasket-mian-h6 {
+      margin: {
+        left: 550px;
+        right: 30px;
+      }
+      font-weight: bolder;
+    }
+    .ShoppingBasket-h6 {
+      font-weight: bolder;
+      margin: {
+        left: 20px;
+        right: 30px;
+      }
+    }
+    .ShoppingBasket-price {
+      font-weight: bolder;
+      color: red;
+    }
+    #ShoppingBasket-register {
+      background-color: $main-color;
+      border: none;
+      color: whitesmoke;
+      display: flex;
+      font-size: 13px;
+      letter-spacing: 3px;
+      padding-left: 13px;
+      width: 92px;
+      height: 30px;
+      &:hover {
+        outline: 1px solid $main-color;
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.BestBooks {
+  // 여기서 플레스 건드리자
+  white-space: wrap;
+  overflow: auto;
+  width: 1000px;
+  display: flex;
+  .BestBooks-top {
+    white-space: wrap;
+
+    margin: {
+      left: 40px;
+      top: 50px;
+    }
+    #BestBooks-image {
+      height: 200px;
+    }
+  }
+}

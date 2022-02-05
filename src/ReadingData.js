@@ -1,0 +1,67 @@
+export default [
+    {
+      "proCategory": "string",
+      "proContents": "string",
+      "proCountry": "KOR",
+      "proDate": "2022-01-26T08:27:39.929Z",
+      "proImage": "../images/Waterpuppy.jpg",
+      "proNum": 0,
+      "proPrice": 0,
+      "proPublisher": "string",
+      "proSales": 0,
+      "proTitle": "string",
+      "proWriter": "string"
+    },
+    {
+      "proCategory": "string",
+      "proContents": "string",
+      "proCountry": "KOR",
+      "proDate": "2022-01-26T08:27:39.929Z",
+      "proImage": "../images/books1.jpg",
+      "proNum": 0,
+      "proPrice": 0,
+      "proPublisher": "string",
+      "proSales": 0,
+      "proTitle": "string",
+      "proWriter": "string"
+    },
+    {
+      "proCategory": "string",
+      "proContents": "string",
+      "proCountry": "KOR",
+      "proDate": "2022-01-26T08:27:39.929Z",
+      "proImage": "../images/Waterpuppy.jpg",
+      "proNum": 0,
+      "proPrice": 0,
+      "proPublisher": "string",
+      "proSales": 0,
+      "proTitle": "string",
+      "proWriter": "string"
+    },
+    {
+      "proCategory": "string",
+      "proContents": "string",
+      "proCountry": "KOR",
+      "proDate": "2022-01-26T08:27:39.929Z",
+      "proImage": "../images/Waterpuppy.jpg",
+      "proNum": 0,
+      "proPrice": 0,
+      "proPublisher": "string",
+      "proSales": 0,
+      "proTitle": "string",
+      "proWriter": "string"
+    },
+    {
+      "proCategory": "string",
+      "proContents": "string",
+      "proCountry": "KOR",
+      "proDate": "2022-01-26T08:27:39.929Z",
+      "proImage": "../images/Waterpuppy.jpg",
+      "proNum": 0,
+      "proPrice": 0,
+      "proPublisher": "string",
+      "proSales": 0,
+      "proTitle": "string",
+      "proWriter": "string"
+    },
+  ]

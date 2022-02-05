@@ -1,0 +1,123 @@
+$main-color: rgb(40, 38, 138);
+$table-color: gainsboro;
+$font-main: whitesmoke;
+$main-color: rgb(40, 38, 138);
+$mypage-color: rgb(122, 122, 122);
+$tr-color: rgb(122, 118, 118);
+$table-info-color: rgb(90, 87, 87);
+$font-size: 12px;
+$font-color: rgb(121, 115, 115);
+
+.Register {
+  min-width: 1000px;
+  .Register-box-top {
+    margin: 50px 18px 0 80px;
+    .Register-box {
+      min-width: 114px;
+      border: 1px solid $main-color;
+      th {
+        color: $font-main;
+        background-color: $main-color;
+        font-size: $font-size;
+        padding: 4px 23px;
+      }
+      td {
+        font-weight: 550;
+        font-size: 8px;
+        color: $table-info-color;
+      }
+      .Register-padding-td01 {
+        padding-top: 10px;
+        padding-bottom: 6px;
+      }
+      .Register-padding-td02 {
+        padding-bottom: 10px;
+      }
+    }
+  }
+  h5 {
+    font-weight: bolder;
+    margin-top: 30px;
+    margin-left: 122px;
+    text-align: left;
+    color: $font-color;
+  }
+
+  .Register-h5-bottom {
+    border-bottom: 1.6px solid $font-color;
+    width: 800px;
+    margin-left: 100px;
+    margin-top: 10px;
+    margin: 10px 0 80px 100px;
+  }
+
+  #Register-font {
+    color: $font-color;
+    text-align: left;
+    margin-left: 188px;
+  }
+
+  .Register-h6-bottom {
+    border-bottom: 1.6px solid $font-color;
+    width: 700px;
+    margin-left: 150px;
+    margin-top: 10px;
+  }
+  .Register-title-top {
+    display: flex;
+    margin: 30px 0 0 180px;
+    color: $font-color;
+    p {
+      font-size: 13px;
+      font-weight: bolder;
+      letter-spacing: 3px;
+      margin-right: 5px;
+    }
+    input {
+      border: 1.6px solid $font-color;
+    }
+  }
+  .Register-error {
+    margin: {
+      left: 10px;
+    }
+    font: {
+      size: 12px;
+      weight: bolder;
+    }
+    color: red;
+  }
+
+  .Register-contents-display {
+    display: flex;
+    margin: 30px 0 0 187px;
+    color: $font-color;
+    p {
+      font-size: 13px;
+      font-weight: bolder;
+      letter-spacing: 3px;
+      margin-right: 14px;
+    }
+    input {
+      border: 1.6px solid $font-color;
+    }
+    textarea {
+      border: 1.6px solid $font-color;
+    }
+  }
+  #Register-register {
+    background-color: $main-color;
+    border: none;
+    color: whitesmoke;
+    display: flex;
+    font-size: 14px;
+    letter-spacing: 3px;
+    padding-left: 13px;
+    width: 65px;
+    height: 30px;
+    margin: 30px 0 0 239px;
+    &:hover {
+      outline: 1px solid $main-color;
+    }
+  }
+}

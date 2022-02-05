@@ -1,0 +1,26 @@
+$main-back-color: rgb(251, 251, 251);
+
+.MainPage {
+  min-width: 1000px;
+  .MainPage-advertisement {
+    height: 350px;
+    padding: {
+      top: 10px;
+    }
+  }
+
+  .MainPage-bestBox {
+    display: flex;
+    background-color: $main-back-color;
+    height: 600px;
+    margin: {
+      top: 30px;
+      bottom: 30px;
+    }
+  }
+
+  .MainPage-recommended {
+    background-color: $main-back-color;
+    height: 150px;
+  }
+}

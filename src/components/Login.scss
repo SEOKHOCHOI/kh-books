@@ -1,0 +1,100 @@
+$font-color: rgb(121, 115, 115);
+$main-color: rgb(40, 38, 138);
+@mixin register(
+  $back-color: $main-color,
+  $border: none,
+  $color: whitesmoke,
+  $width: 80px
+) {
+  background-color: $back-color;
+  border: $border;
+  color: $color;
+  display: flex;
+  font-size: 14px;
+  letter-spacing: 3px;
+  padding-left: 15px;
+  width: $width;
+  height: 30px;
+}
+.Login {
+  min-width: 1000px;
+
+  #Login-font {
+    color: $font-color;
+    text-align: left;
+    margin-left: 188px;
+    font-weight: bolder;
+  }
+
+  .Login-h6-bottom {
+    border-bottom: 1.6px solid $font-color;
+    width: 700px;
+    margin: {
+      left: 150px;
+      top: 10px;
+    }
+  }
+
+  .Login-contents-display {
+    display: flex;
+    .Login-error {
+      margin: {
+        left: 10px;
+      }
+      font: {
+        size: 12px;
+        weight: bolder;
+      }
+      color: red;
+    }
+    margin: {
+      top: 30px;
+      left: 187px;
+    }
+    #Login-id {
+      margin: {
+        right: 24px;
+      }
+    }
+    color: $font-color;
+    p {
+      font: {
+        size: 13px;
+        weight: bolder;
+      }
+      letter-spacing: 3px;
+      margin-right: 7px;
+    }
+    input {
+      border: 1.6px solid $font-color;
+    }
+    textarea {
+      border: 1.6px solid $font-color;
+    }
+  }
+  .Login-input {
+    display: flex;
+    #Login-register {
+      padding-top: 4px;
+      @include register();
+      margin: {
+        top: 30px;
+        left: 186px;
+      }
+      &:hover {
+        outline: 1px solid $main-color;
+      }
+    }
+    #Login-forget {
+      padding-top: 4px;
+      margin: {
+        top: 30px;
+        left: 12px;
+      }
+      @include register(whitesmoke, 1px solid $main-color, $main-color, 167px);
+      &:hover {
+        outline: 1px solid $main-color;
+      }
+    }
+  }
+}

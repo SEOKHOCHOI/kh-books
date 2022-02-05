@@ -1,0 +1,6 @@
+.fontColor {
+  color: rgb(40, 38, 138) !important;
+}
+.fontColor:hover {
+  font-weight: 550;
+}
