@@ -13,18 +13,18 @@ function Navbar() {
           <Link to="/ShoppingList">주문조회</Link>
       </div>
       <section className="section-display">
-        <Link to="/mainpage" id="books-font">SH Books</Link>
+        <Link to="/" id="books-font">SH Books</Link>
         <sapn className="section-display border-all">
           <details>
           {/* 디폴트 값 */}
             <summary id="toggle">
-              통합검색 <span id="v-size">∨</span><sapn id="l-color">ㅣ</sapn>
+              통합검색 <i class="fas fa-chevron-down"></i><sapn id="l-color">ㅣ</sapn>
             </summary>
             <div className="item-position">
-              <Link to="/detail">베스트도서</Link>
-              <Link to="/register">신간도서</Link>
-              <Link to="/">국내도서</Link>
-              <Link to="/">외국도서</Link>
+              <Link to="/bestbookspage">베스트도서</Link>
+              <Link to="/newbooks">신간도서</Link>
+              <Link to="/domestic">국내도서</Link>
+              <Link to="/foreign">외국도서</Link>
             </div>
           </details>
           <span>
@@ -37,43 +37,43 @@ function Navbar() {
       </section>
       <div>
         <Tabs
-          defaultActiveKey="bestBook"
+          defaultActiveKey="bestbookspage"
           transition={false}
           id="noanim-tab-example"
           className="mb-3"
         >
           <Tab 
-            eventKey="bestBook" 
+            eventKey="bestbookspage" 
             title={
-              <Link to="/mainPage"><h6 className="selectItem">베스트도서</h6></Link>
+              <Link to="/bestbookspage"><h6 className="selectItem">베스트도서</h6></Link>
             }
           >
           </Tab>
           <Tab 
             eventKey="newBooks" 
             title={
-              <Link to="/#"><h6 className="selectItem">신간도서</h6></Link>
+              <Link to="/newbooks"><h6 className="selectItem">신간도서</h6></Link>
             }
           >
           </Tab>
           <Tab 
-            eventKey="interior" 
+            eventKey="domestic" 
             title={
-              <Link to="/#"><h6 className="selectItem">국내도서</h6></Link>
+              <Link to="/domestic"><h6 className="selectItem">국내도서</h6></Link>
             }
           >
           </Tab>
           <Tab 
             eventKey="foreign" 
             title={
-              <Link to="/#"><h6 className="selectItem">외국도서</h6></Link>
+              <Link to="/foreign"><h6 className="selectItem">외국도서</h6></Link>
             }
           >
           </Tab>
           <Tab 
-            eventKey="customer" 
+            eventKey="qnalist" 
             title={
-              <Link to="/"><h6 className="selectItem">고객센터</h6></Link>
+              <Link to="/qnalist"><h6 className="selectItem">고객센터</h6></Link>
             }
           >
           </Tab>

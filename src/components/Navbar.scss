@@ -70,12 +70,16 @@ $main-color: rgb(40, 38, 138);
   }
   #toggle {
     border: none;
-    margin-left: 10px;
 
-    #v-size {
-      font-size: 20px;
-      font-weight: lighter;
+    font: {
+      size: 14px;
+      weight: bolder;
     }
+    margin: {
+      top: 5px;
+      left: 4px;
+    }
+
     #l-color {
       font-weight: lighter;
       color: $main-color;
@@ -90,7 +94,12 @@ $main-color: rgb(40, 38, 138);
     display: flex;
     flex-direction: column;
     font-size: 14px;
-    margin-left: 10px;
+    margin: {
+      left: 5px;
+    }
+    font: {
+      weight: bolder;
+    }
   }
   .tab-position {
     position: relative;

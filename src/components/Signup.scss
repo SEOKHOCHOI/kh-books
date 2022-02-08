@@ -10,8 +10,19 @@ $main-color: rgb(40, 38, 138);
     bottom: 30px;
   }
 }
+@mixin font-error($margin-left: 49px) {
+  color: red;
+  font: {
+    size: 13px;
+    weight: bolder;
+  }
+  margin: {
+    left: $margin-left;
+  }
+}
 .Signup {
   min-width: 1000px;
+  margin-top: 40px;
   .Signup-bottom-lighter {
     @include Signup-bottom(1px solid rgb(185, 181, 181));
   }
@@ -30,6 +41,9 @@ $main-color: rgb(40, 38, 138);
     margin: {
       left: 187px;
       bottom: 25px;
+    }
+    #Signup-user-id {
+      @include font-error(43px);
     }
     .Signup-flex {
       display: flex;
@@ -68,5 +82,20 @@ $main-color: rgb(40, 38, 138);
     &:hover {
       outline: 1px solid $main-color;
     }
+  }
+  #Signup-password {
+    @include font-error(118px);
+  }
+  #Signup-password-chk {
+    @include font-error(150px);
+  }
+  #Signup-username {
+    @include font-error(43px);
+  }
+  #Signup-phone {
+    @include font-error(0);
+  }
+  #Signup-email {
+    @include font-error(90px);
   }
 }

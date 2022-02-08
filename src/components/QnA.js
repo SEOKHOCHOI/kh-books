@@ -9,7 +9,7 @@ function QnA() {
         <div className="QnA-h5-bottom"></div>
       </div>
       <div>  
-        <h6 id="QnA-font">Q&A</h6>
+        <h6 id="QnA-font">Notice</h6>
         <div className="QnA-h6-bottom"></div>
       </div>
       <div className="QnA-contents-display">

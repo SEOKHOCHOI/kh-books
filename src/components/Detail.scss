@@ -1,3 +1,6 @@
+$btn-color: white;
+$btn-hover: black;
+
 .Detail {
   width: 1000px;
   h4 {
@@ -32,15 +35,23 @@
       display: flex;
       justify-content: center;
       .Detail-btn-item {
+        background-color: $btn-color;
         width: 24px;
         height: 30px;
         margin: {
           left: 4px;
           right: 1px;
         }
+        &:hover {
+          border: 2px solid $btn-hover;
+        }
       }
       .Detail-btn-item- {
+        background-color: $btn-color;
         height: 30px;
+        &:hover {
+          border: 2px solid $btn-hover;
+        }
       }
     }
   }

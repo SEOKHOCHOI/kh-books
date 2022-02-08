@@ -1,3 +1,6 @@
+$main-color: rgb(40, 38, 138);
+$table-info-color: rgb(39, 37, 37);
+
 .BestBooks {
   // 여기서 플레스 건드리자
   overflow: auto;
@@ -6,8 +9,36 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  text-align: left;
+  a {
+    color: $table-info-color;
+    &:hover {
+      color: $main-color;
+    }
+  }
+  div {
+    font-weight: 550;
+  }
+  font: {
+    size: 15px;
+  }
   .BestBooks-top {
     white-space: wrap;
+    margin: {
+      bottom: 12px;
+    }
+    .BestBooks-info {
+      margin: {
+        left: 10px;
+        top: 5px;
+      }
+      #BestBooks-wp {
+        font: {
+          size: 12px;
+        }
+        color: grey;
+      }
+    }
 
     #BestBooks-image {
       height: 200px;

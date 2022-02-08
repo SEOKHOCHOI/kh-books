@@ -1,6 +1,7 @@
 import React from 'react';
 import Carousel from 'react-material-ui-carousel';
 import './Ad.scss';
+import { Link } from 'react-router-dom';
 
 function Ad(props) {
   return(
@@ -11,7 +12,9 @@ function Ad(props) {
             
             return (
               <span key={i} className="Ad-top">
-                <div><img id="Ad-image" src={ a.proImage}/></div>
+                <Link to={`/emptyad/${a.id}`}>
+                  <div><img id="Ad-image" src={ a.proImage}/></div>
+                </Link>
               </span>
             )
           })

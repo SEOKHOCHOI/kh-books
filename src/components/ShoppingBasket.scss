@@ -1,6 +1,8 @@
 $font-color: rgb(121, 115, 115);
 $font-books: rgb(85, 78, 78);
 $main-color: rgb(40, 38, 138);
+$btn-color: white;
+$btn-hover: black;
 
 .ShoppingBasket {
   min-width: 1000px;
@@ -19,11 +21,31 @@ $main-color: rgb(40, 38, 138);
       right: auto;
     }
   }
-  .d {
+  .ShoppingBasket-table {
     width: 800px;
     margin: {
       left: auto;
       right: auto;
+    }
+    .ShoppingBasket-td {
+      padding: {
+        top: 25px;
+      }
+    }
+
+    #fontawesome-x {
+      padding: {
+        top: 25px;
+      }
+      font: {
+        size: 20px;
+      }
+    }
+    #ShoppingBasket-title {
+      font: {
+        size: 16px;
+        weight: bolder;
+      }
     }
   }
   #ShoppingBasket-image {
@@ -55,6 +77,7 @@ $main-color: rgb(40, 38, 138);
     display: flex;
     flex-direction: column;
     .ShoppinBasket-btn-item- {
+      background-color: $btn-color;
       width: 27px;
       margin: {
         bottom: 52px;
@@ -62,16 +85,17 @@ $main-color: rgb(40, 38, 138);
         right: auto;
       }
       &:hover {
-        background-color: grey;
+        border: 2px solid $btn-hover;
       }
     }
     .ShoppinBasket-btn-item {
+      background-color: $btn-color;
       margin: {
         left: auto;
         right: auto;
       }
       &:hover {
-        background-color: grey;
+        border: 2px solid $btn-hover;
       }
     }
   }
@@ -83,6 +107,7 @@ $main-color: rgb(40, 38, 138);
     display: flex;
     .ShoppingBasket-mian-h6 {
       margin: {
+        top: 3px;
         left: 550px;
         right: 30px;
       }
@@ -91,6 +116,7 @@ $main-color: rgb(40, 38, 138);
     .ShoppingBasket-h6 {
       font-weight: bolder;
       margin: {
+        top: 3px;
         left: 20px;
         right: 30px;
       }
@@ -106,7 +132,10 @@ $main-color: rgb(40, 38, 138);
       display: flex;
       font-size: 13px;
       letter-spacing: 3px;
-      padding-left: 13px;
+      padding: {
+        left: 14px;
+        bottom: 1px;
+      }
       width: 92px;
       height: 30px;
       &:hover {

@@ -1,5 +1,6 @@
 import React from 'react';
 import './BestBooks.scss';
+import { Link } from 'react-router-dom';
 
 function BestBooks(props) {
   return(
@@ -9,10 +10,14 @@ function BestBooks(props) {
           
           return (
             <div key={i} className="BestBooks-top">
-              <div><img id="BestBooks-image" src={ a.proImage }/></div>
-              <div>{ a.proTitle }</div>
-              <div>{ a.proWriter } / { a.proPublisher }</div>
-              <div>{ a.proPrice }</div>
+              <Link to={`/detail/${a.proNum}`}>
+                <div><img id="BestBooks-image" src={ a.proImage }/></div>
+                <div className="BestBooks-info">
+                  <div>{ a.proTitle }</div>
+                  <div id="BestBooks-wp">{ a.proWriter } / { a.proPublisher }</div>
+                  <div>{ a.proPrice }</div>
+                </div>
+              </Link>
             </div>
           )
         })

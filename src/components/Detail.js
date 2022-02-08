@@ -1,12 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Detail.scss'; 
 import { useParams } from 'react-router-dom';
 
 function Detail(props) {
+  const [products, setProducts] = useState([]);
 
   const { proNum } = useParams();
   const booksData = props.booksData.list.find((booksItem) => booksItem.proNum == proNum);
 
+  useEffect(()=>{
+    let books = [];
+    let total = 0;
+    books = props.booksData.list.map((book)=>{
+      total+=book.proPrice;
+      return {count: book.orderAmount, price:book.proPrice}
+    })
+    setProducts(books);
+  }, []);
+
+  const addCount = (index) => {
+    let count = products[index].count + 1;
+    let price = props.booksData.list[index].proPrice*count;
+    let tempProducts = [...products];
+    tempProducts[index] = {count: count, price: price}
+
+    let increace = price - products[index].price
+
+    setProducts(tempProducts);
+  }
 
   return(
     <div className="Detail">
@@ -22,10 +43,10 @@ function Detail(props) {
             <p>{booksData.proDate} / </p>
           </div>
           <div className="Detail-price">
-            <p>판매가 {booksData.proPrice}원</p>
+            <p>판매가 {products[0]&&products[0].price}원</p>
             <div className="Detail-pm">
-              <p>주문수량: {booksData.orderAmount}</p>
-              <button className="Detail-btn-item" onClick={()=>{}}>+</button>
+              <p>주문수량: {products[0]&&products[0].count}</p>
+              <button className="Detail-btn-item" onClick={()=>{addCount(0)}}>+</button>
               <button className="Detail-btn-item-" onClick={()=>{}}>-</button>
             </div>
           </div>
