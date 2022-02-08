@@ -1,0 +1,82 @@
+$font-color: rgb(121, 115, 115);
+$main-color: rgb(40, 38, 138);
+
+.Withdraw {
+  min-width: 1000px;
+
+  #Withdraw-font {
+    color: $font-color;
+    text-align: left;
+    margin-left: 188px;
+    font-weight: bolder;
+  }
+
+  .Withdraw-h6-bottom {
+    border-bottom: 1.6px solid $font-color;
+    width: 700px;
+    margin: {
+      left: 150px;
+      top: 10px;
+    }
+  }
+
+  .Withdraw-contents-display {
+    display: flex;
+    .Withdraw-error {
+      margin: {
+        left: 10px;
+      }
+      font: {
+        size: 12px;
+        weight: bolder;
+      }
+      color: red;
+    }
+    margin: {
+      top: 30px;
+      left: 187px;
+    }
+    #Withdraw-id {
+      margin: {
+        right: 24px;
+      }
+    }
+    color: $font-color;
+    p {
+      font: {
+        size: 13px;
+        weight: bolder;
+      }
+      letter-spacing: 3px;
+      margin-right: 7px;
+    }
+    input {
+      border: 1.6px solid $font-color;
+    }
+    textarea {
+      border: 1.6px solid $font-color;
+    }
+  }
+  .Withdraw-input {
+    display: flex;
+    #Withdraw-register {
+      padding-top: 4px;
+      background-color: $main-color;
+      border: none;
+      color: whitesmoke;
+      display: flex;
+      font-size: 14px;
+      letter-spacing: 3px;
+      padding-left: 15px;
+      width: 97px;
+      height: 30px;
+      margin: {
+        top: 30px;
+        left: 348px;
+      }
+      &:hover {
+        outline: 1px solid $main-color;
+      }
+    }
+  }
+}

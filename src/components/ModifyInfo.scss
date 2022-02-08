@@ -1,0 +1,136 @@
+$table-color: gainsboro;
+$font-main: whitesmoke;
+$main-color: rgb(40, 38, 138);
+$mypage-color: rgb(122, 122, 122);
+$tr-color: rgb(122, 118, 118);
+$table-info-color: rgb(90, 87, 87);
+$button-color: green;
+
+$font-size: 12px;
+
+.ModifyInfo {
+  letter-spacing: 1px;
+  display: flex;
+  min-width: 1000px;
+  .ModifyInfo-box-top {
+    margin: 20px 18px 0 80px;
+    .ModifyInfo-box {
+      min-width: 114px;
+      border: 1px solid $main-color;
+      th {
+        color: $font-main;
+        background-color: $main-color;
+        font-size: $font-size;
+        padding: 4px 23px;
+      }
+      td {
+        font-weight: 550;
+        font-size: 8px;
+        color: $table-info-color;
+      }
+      .padding-td02 {
+        padding-top: 2px;
+      }
+    }
+  }
+  .table-all {
+    padding-top: 20px;
+    min-width: 700px;
+    .table-top {
+      display: flex;
+      justify-content: space-between;
+      .mypage {
+        color: $mypage-color;
+        display: inline-block;
+        font-weight: bolder;
+        margin-left: 16px;
+        font-size: $font-size;
+      }
+      .home {
+        color: $mypage-color;
+        display: inline-block;
+        font-size: 10px;
+        margin-right: 18px;
+      }
+    }
+    .boundary-line {
+      border-bottom: 2px solid $mypage-color;
+      padding-top: 4px;
+    }
+    .my-info {
+      border: 1px solid $table-color;
+      margin: auto;
+      th {
+        background-color: rgb(248, 248, 248);
+        color: $tr-color;
+        padding: 8px 40px;
+        font-size: 5px;
+      }
+      td {
+        padding: 0 90px;
+        font-size: 11px;
+      }
+    }
+    .my-info-font-top {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0 6px 16px;
+      .my-info-font {
+        display: inline-block;
+        font-weight: bolder;
+        color: $table-info-color;
+        font-size: $font-size;
+        margin: {
+          left: 28px;
+        }
+      }
+    }
+  }
+  input {
+    border: none;
+    outline: none;
+    margin: {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+  .ModifyInfo-footer {
+    display: flex;
+    justify-content: left;
+    margin: {
+      left: 44px;
+      top: 10px;
+    }
+    div {
+      display: flex;
+      div {
+        font: {
+          weight: bolder;
+          size: 14px;
+        }
+        margin: {
+          top: 4px;
+          right: 10px;
+        }
+      }
+      input {
+        border: 1px solid gray;
+        margin-right: 10px;
+      }
+    }
+    .info-modify {
+      background-color: whitesmoke;
+      border-color: $button-color;
+      color: $button-color;
+      font-size: 10px;
+      width: 62px;
+      height: 24px;
+      margin: {
+        top: 2px;
+        left: 20px;
+      }
+    }
+  }
+}

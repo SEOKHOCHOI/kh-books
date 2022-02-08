@@ -3,6 +3,11 @@ import './BestBooks.scss';
 import { Link } from 'react-router-dom';
 
 function BestBooks(props) {
+
+  if (props.loading) {
+    return <h2>Loading..</h2>;
+  }
+
   return(
     <div className="BestBooks">
       {
@@ -22,6 +27,17 @@ function BestBooks(props) {
           )
         })
       }
+      
+      <ul className="list-group mb-4">
+        {props.posts.map((post)=>{
+          return (
+            <li key={post.id} className="list-group-item">
+              {post.title}
+            </li>
+          )    
+        })}
+      </ul>
+      
     </div>
   );
 }

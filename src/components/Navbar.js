@@ -7,6 +7,7 @@ function Navbar() {
   return( 
     <nav className="nav-top">
       <div className="Navbar">
+          <Link to="/mypage">임시ㅣ</Link>
           <Link to="/login">로그인</Link>ㅣ
           <Link to="/signup">회원가입</Link>ㅣ
           <Link to="/ShoppingBasket">장바구니</Link>ㅣ

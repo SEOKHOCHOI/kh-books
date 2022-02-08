@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react';
 import './MyPage.scss';
+import { Link } from 'react-router-dom';
 
-function MyPage() {
+function MyPage(props) {
   return(
     <div className="MyPage">
       <div className="mypage-box-top">
@@ -13,10 +14,10 @@ function MyPage() {
           </thead>
           <tbody>
             <tr>
-              <td className="padding-td01">정보수정</td>
+              <td className="padding-td01"><Link to="/modifyinfo">정보수정</Link></td>
             </tr>
             <tr> 
-              <td className="padding-td02">회원탈퇴</td>
+              <td className="padding-td02"><Link to="/withdraw">회원탈퇴</Link></td>
             </tr>
           </tbody>
         </table>
@@ -29,7 +30,7 @@ function MyPage() {
         <div className="boundary-line"></div>
         <div className="my-info-font-top">
           <span className="my-info-font">나의 정보</span>
-          <button className="info-modify">정보 수정</button>
+          <Link to="/modifyinfo"><button className="info-modify">정보 수정</button></Link>
         </div>
         <table className="my-info">
           <tr>

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import './Login.scss';
-import { Link } from 'react-router-dom';
+import './Withdraw.scss';
 
-function Login() {
+function Withdraw() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [usernameError, setUsernameError] = useState('');
@@ -43,39 +42,38 @@ function Login() {
   };
 
   return(
-    <div className="Login">
+    <div className="Withdraw">
       <form onSubmit={onSubmit}>
         <div>  
-          <h6 id="Login-font">로그인</h6>
-          <div className="Login-h6-bottom"></div>
+          <h6 id="Withdraw-font">회원탈퇴</h6>
+          <div className="Withdraw-h6-bottom"></div>
         </div>
-        <div className="Login-contents-display">
-          <p id="Login-id">아이디</p>
+        <div className="Withdraw-contents-display">
+          <p id="Withdraw-id">아이디</p>
           <input
             type="text" 
-            placeholder="Username" 
+            placeholder="아이디 확인" 
             value={username} 
             onChange={(e) => {setUsername(e.target.value)}}
           />
-          <div className="Login-error">{usernameError}</div>
+          <div className="Withdraw-error">{usernameError}</div>
         </div>
-        <div className="Login-contents-display">
+        <div className="Withdraw-contents-display">
           <p>비밀번호</p>
           <input 
             type="password"
-            placeholder="Password" 
+            placeholder="비밀번호 확인" 
             value={password} 
             onChange={(e) => {setPassword(e.target.value)}}
           />
-          <div className="Login-error">{passwordError}</div>
+          <div className="Withdraw-error">{passwordError}</div>
         </div>
-        <div className="Login-input">
-          <button id="Login-register" type="submit">로그인</button>
-          <Link to="/finding"><button id="Login-forget" type="submit">아이디/비번 찾기</button></Link>
+        <div className="Withdraw-input">
+          <button id="Withdraw-register" type="submit">회원탈퇴</button>
         </div>
       </form>
     </div>
   );
 }
 
-export default Login;
+export default Withdraw;

@@ -22,6 +22,9 @@ import BestBooksPage from './components/BestBooksPage';
 import Charge from './components/Charge';
 import EmptyAd from './components/EmptyAd';
 import AdData from './AdData';
+import Finding from './components/Finding';
+import ModifyInfo from './components/ModifyInfo';
+import Withdraw from './components/Withdraw';
 
 function App() {
   const [booksData, setBooksData] = useState(Data);
@@ -46,6 +49,8 @@ function App() {
         */}
         <Routes>
             <Route path="/login" element={<Login />} />
+            <Route path="/modifyinfo" element={<ModifyInfo />} />
+            <Route path="/withdraw" element={<Withdraw />} />
             <Route path="/mypage" element={<MyPage />} />
             <Route path="/qnalist/qna" element={<QnA />} />
             <Route path="/qnalist" element={<QnAList />} />
@@ -55,6 +60,7 @@ function App() {
             <Route path="/newbooks" element={<NewBooks booksData={booksData} />} />
             <Route path="/domestic" element={<Domestic booksData={booksData} />} />
             <Route path="/foreign" element={<Foreign booksData={booksData} />} />
+            <Route path="/mypage" element={<MyPage booksData={booksData} />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/ShoppingBasket" element={<ShoppingBasket booksData={booksData} setBooksData={setBooksData}/>} />
             <Route path="/ShoppingList" element={<ShoppingList booksData={booksData} />} />
@@ -62,6 +68,7 @@ function App() {
             <Route path="/emptyad/:id" element={<EmptyAd adData={adData}/>} />
             <Route path="/register" element={<Register booksData={booksData} setBooksData={setBooksData} />} />
             <Route path="/charge" element={<Charge booksData={booksData} setBooksData={setBooksData} />} />
+            <Route path="/finding" element={<Finding />} />
             
         </Routes>
         {/* <img src={image} alt="물개쓰" width="10%"/> */}
