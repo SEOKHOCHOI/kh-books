@@ -28,7 +28,7 @@ function BestBooks(props) {
         })
       }
       
-      {/* <ul className="list-group mb-4">
+      <ul className="list-group mb-4">
         {props.posts.map((post)=>{
           return (
             <li key={post.id} className="list-group-item">
@@ -36,7 +36,7 @@ function BestBooks(props) {
             </li>
           )    
         })}
-      </ul> */}
+      </ul>
       
     </div>
   );

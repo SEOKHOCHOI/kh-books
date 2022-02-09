@@ -29,7 +29,7 @@ function Navbar() {
             </div>
           </details>
           <span>
-            <input type="text" id="text-st" />
+            <input type="text" id="text-st" onChange={()=>{console.log('hi')}}/>
           </span>
           <span>
             <input type="button" value="검색" id="button-st" />
