@@ -54,7 +54,7 @@ function BestBooksPage(props) {
       </div>
       <div className="BestBooksPage-compo">
         <BestBooks posts={currentPosts} loading={loading} booksData={props.booksData.list}/>
-        <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate}/>
+        <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate} />
       </div>
     </div>
   );
