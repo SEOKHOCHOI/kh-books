@@ -3,39 +3,51 @@ import './Login.scss';
 import { Link } from 'react-router-dom';
 
 function Login() {
-  const [username, setUsername] = useState('');
+  const [userId, setUserId] = useState('');
   const [password, setPassword] = useState('');
-  const [usernameError, setUsernameError] = useState('');
+  const [userIdError, setUserIdError] = useState('');
   const [passwordError, setPasswordError] = useState('');
-  
+
   const resetForm = () => {
-    setUsername('');
+    setUserId('');
     setPassword('');
   };
 
   const validateForm = () => {
+    let checkId = true;
+    let checkPassword = true;
+
     resetErrors();
-    let validated = true;
-    if (!username) {
-      setUsernameError('아이디를 입력해주세요');
-      validated = false;
+    const symbolId = /^[\-_|a-zA-Z0-9]{5,20}$/;
+    const symbolPw = /^(?=.*[a-zA-Z])(?=.*[\"#$'()*+,-./:;<=>?@[\]^_`{|}~])(?=.*[0-9]).{9,16}$/;
+    if (!userId) {
+      setUserIdError('아이디를 입력해주세요.');
+      checkId = false;
+    }
+    if (!symbolId.test(userId)) {
+      setUserIdError('5~20자의 영문 소문자, 숫자와 특수기호(_), (-)만 사용 가능합니다.');
+      checkId = false;
     }
     if (!password) {
       setPasswordError('비밀번호를 입력해주세요');
-      validated = false;
+      checkPassword = false;
+    }
+    if (!symbolPw.test(password)){
+      setPasswordError('알파벳+숫자 포함 6~10글자 입력해주세요, 특수문자 3글자 포함')
+      checkPassword = false;
     }
 
-    return validated;
+    return checkId && checkPassword;
   }
   const resetErrors = () => {
-    setUsernameError('');
+    setUserIdError('');
     setPasswordError('');
   };
   const onSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
       alert('submitted');
-      console.log(username,password);
+      console.log(userId,password);
       // 이부분이 서버로제출
       resetErrors();
       resetForm();
@@ -54,10 +66,10 @@ function Login() {
           <input
             type="text" 
             placeholder="Username" 
-            value={username} 
-            onChange={(e) => {setUsername(e.target.value)}}
+            value={userId} 
+            onChange={(e) => {setUserId(e.target.value)}}
           />
-          <div className="Login-error">{usernameError}</div>
+          <div className="Login-error">{userIdError}</div>
         </div>
         <div className="Login-contents-display">
           <p>비밀번호</p>
