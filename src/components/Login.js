@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './Login.scss';
 import { Link } from 'react-router-dom';
-
-function Login() {
+import request from '../api/request';
+function Login({logined}) {
   const [userId, setUserId] = useState('');
   const [password, setPassword] = useState('');
   const [userIdError, setUserIdError] = useState('');
@@ -19,7 +19,7 @@ function Login() {
 
     resetErrors();
     const symbolId = /^[\-_|a-zA-Z0-9]{5,20}$/;
-    const symbolPw = /^(?=.*[a-zA-Z])(?=.*[\"#$'()*+,-./:;<=>?@[\]^_`{|}~])(?=.*[0-9]).{9,16}$/;
+    const symbolPw = /^(?=.*[a-zA-Z])(?=.*[!@#$%^&*(){}[\]\/:;<=>?])(?=.*[0-9]).{9,16}$/;
     if (!userId) {
       setUserIdError('아이디를 입력해주세요.');
       checkId = false;
@@ -33,7 +33,7 @@ function Login() {
       checkPassword = false;
     }
     if (!symbolPw.test(password)){
-      setPasswordError('알파벳+숫자 포함 6~10글자 입력해주세요, 특수문자 3글자 포함')
+      setPasswordError('알파벳 대소문자, 특수문자, 숫자 각 한 글자 필수입력, 9~16자리 입력 해주세요.')
       checkPassword = false;
     }
 
@@ -46,9 +46,16 @@ function Login() {
   const onSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      alert('submitted');
-      console.log(userId,password);
-      // 이부분이 서버로제출
+      let res = request({url:'/login',method:'POST',data:{userid:userId,password:password}})
+      res.then(data=>{
+        if(data.logined){
+          sessionStorage.setItem('logined', userId);
+          logined(userId);
+        }else{
+          alert('로그인 실패');
+        }
+      })
+
       resetErrors();
       resetForm();
     }

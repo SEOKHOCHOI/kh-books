@@ -59,6 +59,16 @@ $main-color: rgb(40, 38, 138);
       border: 1.6px solid $font-color;
     }
   }
+  #QnA-titleError {
+    color: red;
+    font: {
+      size: 12px;
+      weight: bolder;
+    }
+    margin: {
+      left: -420px;
+    }
+  }
   #QnA-register {
     background-color: $main-color;
     border: none;

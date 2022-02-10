@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import './Signup.scss';
+import request from '../api/request';
 
 function Signup() {
-
   const [username, setUsername] = useState('');
-  const [userid, setUserid] = useState('');
+  const [userId, setUserId] = useState('');
   const [birth, setBirth] = useState('');
   const [address, setAddress] = useState('');
   const [phone, setPhone] = useState('');
@@ -15,15 +15,14 @@ function Signup() {
   const [usernameError, setUsernameError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [passwordCheckError, setPasswordCheckError] = useState('');
-  const [useridError, setUseridError] = useState('');
-  const [birthError, setBirthError] = useState('');
+  const [userIdError, setUserIdError] = useState('');
   const [emailError, setEmailError] = useState('');
   const [phoneError, setPhoneError] = useState('');
   const resetForm = () => {
     setUsername('');
     setPassword('');
     setPasswordCheck('');
-    setUserid('');
+    setUserId('');
     setBirth('');
     setAddress('')
     setPhone('');
@@ -31,49 +30,88 @@ function Signup() {
   };
 
   const validateForm = () => {
+    let checkId = true;
+    let checkPassword = true;
+    let checkPasswordCheck = true;
+    let checkUsername = true;
+    let checkEmail = true;
+    let checkPhoneNum = true;
+
     resetErrors();
-    let validated = true;
+    const symbolId = /^[\-_|a-zA-Z0-9]{5,20}$/;
+    const symbolPw = /^(?=.*[a-zA-Z])(?=.*[!@#$%^&*(){}[\]\/:;<=>?])(?=.*[0-9]).{9,16}$/;
+    const symbolEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+    const symbolPhoneNum = /^01(0|1|6|7|8|9?)-?([0-9]{3,4})-?([0-9]{4})$/;
+
     if (!username) {
-      setUsernameError('다른 아이디를 입력해주세요');
-      validated = false;
+      setUsernameError('이름을 입력해주세요.');
+      checkUsername = false;
     }
     if (!password) {
       setPasswordError('비밀번호를 입력해주세요');
-      validated = false;
+      checkPassword = false;
     }
-    if (!passwordCheck) {
+    if (!symbolPw.test(password)) {
+      setPasswordError('대소문자/특수문자/숫자 각 한 글자 필수, 9~16자리 입력 해주세요.');
+      checkPassword = false;
+    }
+    if (passwordCheck !== password) {
       setPasswordCheckError('비밀번호가 일치하지 않습니다.');
-      validated = false;
+      checkPasswordCheck = false;
     }
-    if (!userid) {
-      validated = false;
-      setUseridError('이 아이디는 사용불가 합니다')
+    if (!symbolId.test(userId)) {
+      setUserIdError('이 아이디는 사용불가 합니다.');
+      checkId = false;
     }
-    if (!phone) {
-      validated = false;
-      setPhoneError('번호를 입력해 주세요')
+    if (!symbolPhoneNum.test(phone)) {
+      setPhoneError('정확한 번호를 입력해 주세요.');
+      checkPhoneNum = false;
     }
-    if (!email) {
-      validated = false;
-      setEmailError('메일을 입력해 주세요')
+    if(!email) {
+      setEmailError('이메일을 입력해 주세요.');
+      checkEmail = false;
+    }
+    if (!symbolEmail.test(email)) {
+      setEmailError('메일을 입력해 주세요.');
+      checkEmail = false;
     }
 
-    return validated;
+    return  (
+      checkEmail && 
+      checkUsername && 
+      checkId && 
+      checkPassword && 
+      checkPhoneNum && 
+      checkPasswordCheck
+    );
   }
   const resetErrors = () => {
     setUsernameError('');
     setPasswordError('');
     setPasswordCheckError('');
-    setUseridError('');
+    setUserIdError('');
     setPhoneError('');
     setEmailError('');
   };
   const onSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      alert('submitted');
-      console.log(username,password);
-      // 이부분이 서버로제출
+      let res = request({url:'/join', method:'POST', data:{
+        userid: userId,
+        username: username,
+        password: password,
+        address: address,
+        phone: phone,
+        email: email,
+      }
+    })
+      res.then(data=>{
+        if(data.join_message) {
+          sessionStorage.setItem('join_message', username)
+        } else {
+          alert('회원가입 실패');
+        }
+      })
       resetErrors();
       resetForm();
     }
@@ -93,11 +131,11 @@ function Signup() {
               <input
                 type="text" 
                 placeholder="ID" 
-                value={userid} 
-                onChange={(e) => {setUserid(e.target.value)}}
+                value={userId} 
+                onChange={(e) => {setUserId(e.target.value)}}
               />
             </div>
-            <div id="Signup-user-id">{useridError}</div>
+            <div id="Signup-user-id">{userIdError}</div>
           </span>
           <span>
             <div>
@@ -105,7 +143,7 @@ function Signup() {
                 <p>&emsp;&emsp;비밀번호&emsp;&emsp;&emsp;&nbsp;</p>
                 <input
                   type="password" 
-                  placeholder="Password" 
+                  placeholder="ex) ddddddddD1@" 
                   value={password} 
                   onChange={(e) => {setPassword(e.target.value)}}
                 />

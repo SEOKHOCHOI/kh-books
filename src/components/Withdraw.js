@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Withdraw.scss';
+import request from '../api/request';
 
 function Withdraw() {
   const [username, setUsername] = useState('');
@@ -33,9 +34,9 @@ function Withdraw() {
   const onSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      alert('submitted');
-      console.log(username,password);
-      // 이부분이 서버로제출
+      alert("d")
+      
+
       resetErrors();
       resetForm();
     }

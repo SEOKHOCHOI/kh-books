@@ -16,7 +16,7 @@ function MainPage(props) {
       </div>
       <h5>베스트도서</h5>
       <div className="MainPage-bestBox">
-        {/* <BestBooks booksData={props.booksData.list}/>   */}
+        <BestBooks booksData={props.booksData.list}/>  
       </div>
       <h5>MD 추천도서</h5>
       <div className="MainPage-recommended">

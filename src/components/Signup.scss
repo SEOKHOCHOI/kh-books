@@ -84,16 +84,16 @@ $main-color: rgb(40, 38, 138);
     }
   }
   #Signup-password {
-    @include font-error(118px);
+    @include font-error(147px);
   }
   #Signup-password-chk {
-    @include font-error(150px);
+    @include font-error(-58px);
   }
   #Signup-username {
-    @include font-error(43px);
+    @include font-error(2px);
   }
   #Signup-phone {
-    @include font-error(0);
+    @include font-error(40px);
   }
   #Signup-email {
     @include font-error(90px);

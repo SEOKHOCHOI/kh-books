@@ -1,0 +1,138 @@
+$main-color: rgb(40, 38, 138);
+
+.NavbarAfterLogin-nav-top {
+  min-width: 1000px;
+  .Navbar {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    button {
+      border: none;
+      background-color: white;
+      color: $main-color;
+      &:hover {
+        font-weight: bolder;
+        color: $main-color;
+      }
+    }
+  }
+  button.nav-link.active {
+    background-color: $main-color;
+
+    h6 {
+      color: whitesmoke;
+    }
+  }
+
+  .mb-3 {
+    display: flex;
+    justify-content: center;
+    border-bottom: 3px solid $main-color;
+  }
+  .selectItem {
+    font-weight: bold;
+  }
+
+  .section-display {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 7px;
+    margin-top: 20px;
+    #books-font {
+      color: $main-color;
+      font-size: 30px;
+      font-weight: bolder;
+      margin-right: 16px;
+      margin-top: 20px;
+      margin-bottom: 2px;
+    }
+    #text-st {
+      outline: none;
+      z-index: 0;
+      width: 320px;
+    }
+    #button-st {
+      background-color: $main-color;
+      color: whitesmoke;
+      outline: none;
+      margin: -2px -2px -2px 0;
+      height: 37px;
+      width: 50px;
+    }
+  }
+  .border-all {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    border: 3px solid $main-color;
+    width: 488px;
+    margin-right: 116px;
+    max-height: 38px;
+    input {
+      text-align: center;
+      padding-top: 3px;
+      border: none;
+    }
+  }
+  summary::marker {
+    display: none;
+    content: "";
+  }
+  #toggle {
+    border: none;
+
+    font: {
+      size: 14px;
+      weight: bolder;
+    }
+    margin: {
+      top: 5px;
+      left: 4px;
+    }
+
+    #l-color {
+      font-weight: lighter;
+      color: $main-color;
+    }
+  }
+
+  .item-position {
+    text-align: left;
+    background-color: #fff;
+    position: absolute;
+    z-index: 1px;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    margin: {
+      left: 5px;
+    }
+    font: {
+      weight: bolder;
+    }
+  }
+  .tab-position {
+    position: relative;
+    z-index: -1;
+  }
+}
+
+.nav-tabs {
+  .nav-link {
+    height: 35px;
+    border-bottom: none;
+    .active {
+      border: 1px solid $main-color;
+      background-color: $main-color;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $main-color;
+  &:hover {
+    font-weight: bolder;
+    color: $main-color;
+  }
+}
