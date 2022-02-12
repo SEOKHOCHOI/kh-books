@@ -1,9 +1,44 @@
-import React from 'react';
+import React,{ useState, useEffect } from 'react';
 import './Navbar.scss';
 import { Link } from 'react-router-dom';
 import { Tabs, Tab } from 'react-bootstrap';
+import request from '../api/request';
 // Navbar as NV 이건 별칭
 function Navbar() {
+  const [search, setSearch] = useState("");
+  const [items, setItems] = useState([]);
+
+  // useEffect(()=>{
+  //   const bookData = async () => {
+  //     await axios
+  //       .get(url걔네여기에)
+  //       .then((res)=>{
+  //         setItems(여기다 res.data.받아온데이터)
+  //       });
+  //   };
+  //   bookData();
+  // }, []);
+
+  // const onSearch = (e) => {
+  //   e.preventDefault();
+  //   if (search === null || search === '') {
+  //     axios.get(url걔네여기다)
+  //       .then((res)=>{
+  //         setItems(res.data.검색할뭔가??)
+  //       });
+  //   } else {
+  //     const filterData = items.filter((row) => row.bookData.includes(search))
+  //     setItems(filterData)
+  //   }
+  //   setSearch('')
+  // };
+
+  // // onChange action으로 input value값에 저장된 검색어 가져오기.
+  // const onChangeSearch = (e) => {
+  //   e.preventDefault();
+  //   setSearch(e.target.value);
+  // };
+
   return( 
     <nav className="nav-top">
       <div className="Navbar">
@@ -28,10 +63,10 @@ function Navbar() {
             </div>
           </details>
           <span>
-            <input type="text" id="text-st" onChange={()=>{console.log('hi')}}/>
+            <input type="text" id="text-st" value="{search}로변경" placeholder="검색어를 입력하세요." onChange={()=>{}}/>
           </span>
           <span>
-            <input type="button" value="검색" id="button-st" />
+            <input type="button" value="" id="button-st" />
           </span>
         </sapn>
       </section>
