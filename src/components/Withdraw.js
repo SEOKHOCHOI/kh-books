@@ -34,8 +34,10 @@ function Withdraw() {
   const onSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      alert("d")
-      
+      let res = request({url:'/deleteuser',method:'GET'})
+      res.then(data=>{
+        console.log(data)
+      })
 
       resetErrors();
       resetForm();

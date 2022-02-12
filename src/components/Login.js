@@ -48,6 +48,7 @@ function Login({logined}) {
     if (validateForm()) {
       let res = request({url:'/login',method:'POST',data:{userid:userId,password:password}})
       res.then(data=>{
+        console.log(data);
         if(data.logined){
           sessionStorage.setItem('logined', userId);
           logined(userId);

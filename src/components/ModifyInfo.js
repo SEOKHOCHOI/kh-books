@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './ModifyInfo.scss';
+import request from '../api/request';
 
 function ModifyInfo() {
   return(

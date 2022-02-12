@@ -27,7 +27,7 @@ function NavbarAfterLogin({logout}) {
           <Link to="/ShoppingList">주문조회</Link>
       </div>
       <section className="section-display">
-        <Link to="/" id="books-font">SH Books</Link>
+        <Link to="/" id="books-font">KH Books</Link>
         <sapn className="section-display border-all">
           <details>
           {/* 디폴트 값 */}

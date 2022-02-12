@@ -7,14 +7,13 @@ function Navbar() {
   return( 
     <nav className="nav-top">
       <div className="Navbar">
-          <Link to="/mypage">임시ㅣ</Link>
           <Link to="/login">로그인</Link>ㅣ
           <Link to="/signup">회원가입</Link>ㅣ
           <Link to="/ShoppingBasket">장바구니</Link>ㅣ
           <Link to="/ShoppingList">주문조회</Link>
       </div>
       <section className="section-display">
-        <Link to="/" id="books-font">SH Books</Link>
+        <Link to="/" id="books-font">KH Books</Link>
         <sapn className="section-display border-all">
           <details>
           {/* 디폴트 값 */}

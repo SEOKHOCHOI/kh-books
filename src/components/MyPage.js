@@ -1,6 +1,7 @@
 import React from 'react';
 import './MyPage.scss';
 import { Link } from 'react-router-dom';
+import request from '../api/request';
 
 function MyPage(props) {
   return(
