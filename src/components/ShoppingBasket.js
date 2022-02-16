@@ -2,6 +2,7 @@ import React from 'react';
 import './ShoppingBasket.scss';
 import { Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import request from '../api/request';
 
 function ShoppingBasket(props) {
   const [products,setProducts] = React.useState([]);
@@ -44,6 +45,18 @@ function ShoppingBasket(props) {
     }
   }
 
+  function del() {
+    if(window.confirm('삭제 하시겠습니까?')) {
+      alert('삭제 되었습니다.');
+      let res = request({url:'', method:'DELETE'})
+        res.then((res)=>{
+        if(res.ok){
+          setProducts({proNum:0});
+        }
+      })
+    }
+  }
+
   return(
     <div className="ShoppingBasket">
       <div>
@@ -66,7 +79,7 @@ function ShoppingBasket(props) {
             props.booksData.list.map((a,i)=>{
               return (
                 <tr key={i}>
-                  <td id="fontawesome-x"><i class="fas fa-times"></i></td>
+                  <td id="fontawesome-x"><i class="fas fa-times" onClick={del}></i></td>
                   <td><img id="ShoppingBasket-image" src={ a.proImage } /></td>
                   <td id="ShoppingBasket-title" className="ShoppingBasket-td">{ a.proTitle }</td>
                   <td className="ShoppingBasket-td">{ products[i]&&products[i].count }</td>

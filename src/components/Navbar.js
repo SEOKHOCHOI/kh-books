@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 import { Tabs, Tab } from 'react-bootstrap';
 import request from '../api/request';
 // Navbar as NV 이건 별칭
-function Navbar() {
+function Navbar({logout}) {
   const [search, setSearch] = useState("");
   const [items, setItems] = useState([]);
+  const [session, setSession] = useState('');
 
   // useEffect(()=>{
   //   const bookData = async () => {
@@ -39,11 +40,36 @@ function Navbar() {
   //   setSearch(e.target.value);
   // };
 
+
+  // 이건 컴포넌트 교체
+  // onClick={()=>{
+  //   let res = request({url:'',method:'',data:{}})
+  //   res.then(data=>{})
+  // }}
+
+  const deleteSessionData = () => {
+    //특정 데이터 삭제 실시
+    sessionStorage.removeItem('logined');
+    logout()
+  };
+
   return( 
     <nav className="nav-top">
       <div className="Navbar">
-          <Link to="/login">로그인</Link>ㅣ
-          <Link to="/signup">회원가입</Link>ㅣ
+        {
+          session 
+          ? (
+            <>
+              <Link to="/mypage">마이페이지</Link>ㅣ
+              <button onClick={deleteSessionData}>로그아웃</button>ㅣ
+            </>
+          ) : (
+            <>
+              <Link to="/login">로그인</Link>ㅣ
+              <Link to="/signup">회원가입</Link>ㅣ
+            </>
+          )
+        }
           <Link to="/ShoppingBasket">장바구니</Link>ㅣ
           <Link to="/ShoppingList">주문조회</Link>
       </div>
@@ -56,10 +82,10 @@ function Navbar() {
               통합검색 <i class="fas fa-chevron-down"></i><sapn id="l-color">ㅣ</sapn>
             </summary>
             <div className="item-position">
-              <Link to="/bestbookspage">베스트도서</Link>
-              <Link to="/newbooks">신간도서</Link>
-              <Link to="/domestic">국내도서</Link>
-              <Link to="/foreign">외국도서</Link>
+              <span>베스트도서</span>
+              <span>신간도서</span>
+              <span>국내도서</span>
+              <span>외국도서</span>
             </div>
           </details>
           <span>

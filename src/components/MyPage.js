@@ -1,9 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './MyPage.scss';
 import { Link } from 'react-router-dom';
 import request from '../api/request';
 
 function MyPage(props) {
+  const [userId, setUserId] = useState('');
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [address, setAddress] = useState('');
+  const [phone, setPhone] = useState('');
+  const [password, setPassword] = useState('');
+  
+  const getInfo = () => {
+
+    let res = request({url:'/mypage', method:'GET',data:{
+      userid: userId,
+      username: username,
+      password: password,
+      email: email,
+      address: address,
+      phone: phone
+      }
+    })
+    res.then((data)=>{
+      setUserId(data.userId);
+      setUsername(data.username);
+      setEmail(data.email);
+      setAddress(data.address);
+      setPhone(data.phone);
+      setPassword(data.password);
+    })
+  }
+  getInfo();
   return(
     <div className="MyPage">
       <div className="mypage-box-top">
@@ -36,13 +64,13 @@ function MyPage(props) {
         <table className="my-info">
           <tr>
             <th className="my-info">유선번호</th> <td className="my-info">031-</td> 
-            <th className="my-info">휴대폰</th> <td className="my-info">010-</td>
+            <th className="my-info">휴대폰</th> <td className="my-info">{phone}</td>
           </tr>
           <tr className="my-info">
-            <th className="my-info">E-MAIL</th> <td>---@-----</td>
+            <th className="my-info">E-MAIL</th> <td>{email}</td>
           </tr>
           <tr>
-            <th className="my-info">주 소</th> <td>5232-223</td>
+            <th className="my-info">주 소</th> <td>{address}</td>
           </tr>
         </table>
         <div className="track-info">최근 주문/배송 조회</div>

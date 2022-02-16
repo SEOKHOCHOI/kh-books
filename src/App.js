@@ -36,36 +36,7 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        {
-          // sessionStorage.getItem('logined')
-          session ? (
-            <>
-              <NavbarAfterLogin logout={(logout)=>{setSession(logout)}}/>
-              <Routes>
-                <Route path="/modifyinfo" element={<ModifyInfo />} />
-                <Route path="/withdraw" element={<Withdraw />} />
-                <Route path="/mypage" element={<MyPage />} />
-                <Route path="/qnalist/qna" element={<QnA />} />
-                <Route path="/qnalist" element={<QnAList />} />
-                <Route path="/track" element={<Track />} />
-                <Route path="/" element={<MainPage booksData={booksData} />} />
-                <Route path="/bestbookspage" element={<BestBooksPage booksData={booksData} />} />
-                <Route path="/newbooks" element={<NewBooks booksData={booksData} />} />
-                <Route path="/domestic" element={<Domestic booksData={booksData} />} />
-                <Route path="/foreign" element={<Foreign booksData={booksData} />} />
-                <Route path="/mypage" element={<MyPage booksData={booksData} />} />
-                <Route path="/ShoppingBasket" element={<ShoppingBasket booksData={booksData} setBooksData={setBooksData}/>} />
-                <Route path="/ShoppingList" element={<ShoppingList booksData={booksData} />} />
-                <Route path="/detail/:proNum" element={<Detail booksData={booksData} />} />
-                <Route path="/emptyad/:id" element={<EmptyAd adData={adData}/>} />
-                <Route path="/register" element={<Register booksData={booksData} setBooksData={setBooksData} />} />
-                <Route path="/charge" element={<Charge booksData={booksData} setBooksData={setBooksData} />} />
-              </Routes>
-            </>
-          ):(
-
-            <>
-              <Navbar />
+              <Navbar logout={(logout)=>{setSession(logout)}}/>
               <Routes>
                 <Route path="/login" element={<Login logined={(logined)=>setSession(logined)} />} />
                 <Route path="/signup" element={<Signup />} />
@@ -79,11 +50,15 @@ function App() {
                 <Route path="/emptyad/:id" element={<EmptyAd adData={adData}/>} />
                 <Route path="/ShoppingBasket" element={<ShoppingBasket booksData={booksData} setBooksData={setBooksData}/>} />
                 <Route path="/ShoppingList" element={<ShoppingList booksData={booksData} />} />
-                  
+                <Route path="/modifyinfo" element={<ModifyInfo />} />
+                <Route path="/withdraw" element={<Withdraw />} />
+                <Route path="/mypage" element={<MyPage />} />
+                <Route path="/qnalist/qna" element={<QnA />} />
+                <Route path="/qnalist" element={<QnAList />} />
+                <Route path="/track" element={<Track />} />
+                <Route path="/register" element={<Register booksData={booksData} setBooksData={setBooksData} />} />
+                <Route path="/charge" element={<Charge booksData={booksData} setBooksData={setBooksData} />} />
               </Routes>
-            </>
-          )
-        }
         {/* <img src={image} alt="물개쓰" width="10%"/> */}
       </div>
     </div>

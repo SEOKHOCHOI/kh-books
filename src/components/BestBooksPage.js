@@ -4,6 +4,7 @@ import BestBooks from './bestBooks/BestBooks';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Pagination from './Pagination';
+import request from '../api/request';
 
 function BestBooksPage(props) {
   const [posts, setPosts] = useState([]);
@@ -14,7 +15,7 @@ function BestBooksPage(props) {
   useEffect(()=>{
     const fetchPosts = async () => {
       setLoading(true);
-      const res = await axios.get('https://jsonplaceholder.typicode.com/posts');
+      let res = await axios.get('https://jsonplaceholder.typicode.com/posts');
       setPosts(res.data);
       setLoading(false);
     }
@@ -53,8 +54,8 @@ function BestBooksPage(props) {
         </table>
       </div>
       <div className="BestBooksPage-compo">
-        <BestBooks posts={currentPosts} loading={loading} booksData={props.booksData.list}/>
-        <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate} />
+        <div id="best-compo"><BestBooks posts={currentPosts} loading={loading} booksData={props.booksData.list}/></div>
+        <div id="page-compo"><Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate} /></div>
       </div>
     </div>
   );

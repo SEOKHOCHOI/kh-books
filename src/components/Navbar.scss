@@ -118,7 +118,8 @@ $main-color: rgb(40, 38, 138);
   }
 }
 
-a {
+a,
+h6 {
   text-decoration: none;
   color: $main-color;
   &:hover {

@@ -45,12 +45,12 @@ function QnA() {
         <div className="QnA-contents-display">
           <p>제 목</p>
           <input
-              type="text" 
-              name="title"
-              placeholder="Title" 
-              value={title} 
-              onChange={(e) => {setTitle(e.target.value)}}
-            />
+            type="text" 
+            name="title"
+            placeholder="Title" 
+            value={title} 
+            onChange={(e) => {setTitle(e.target.value)}}
+          />
         </div>
         <div id="QnA-titleError">{titleError}</div>
         <div className="QnA-contents-display">

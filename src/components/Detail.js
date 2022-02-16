@@ -21,6 +21,15 @@ function Detail(props) {
 
     setProducts(tempProduct);
   }
+  const subCount = () => {
+    if (product.count > 1) {
+      let count = product.count - 1;
+      let price = book.proPrice*count;
+      let tempProduct = {count: count, price: price}
+  
+      setProducts(tempProduct);
+    }
+  }
 
   return(
     <div className="Detail">
@@ -40,13 +49,13 @@ function Detail(props) {
             <div className="Detail-pm">
               <p>주문수량: {product&&product.count}</p>
               <button className="Detail-btn-item" onClick={addCount}>+</button>
-              <button className="Detail-btn-item-" onClick={()=>{}}>-</button>
+              <button className="Detail-btn-item-" onClick={subCount}>-</button>
             </div>
           </div>
-          <button className="btn btn-danger" type="submit">
+          <button className="btn btn-danger" type="submit" onClick={()=>{}}>
             장바구니
           </button>
-          <button className="btn btn-danger Detail-btn" type="submit">
+          <button className="btn btn-danger Detail-btn" type="submit" onClick={()=>{}}>
             바로구매
           </button>
         </div>
